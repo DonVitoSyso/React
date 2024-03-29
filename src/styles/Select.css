@@ -1,0 +1,4 @@
+tr.selected-country {
+    background: bisque;
+    --bs-table-bg: bisque;
+}

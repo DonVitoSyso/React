@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
-import "../styles/country.css"; 
+import "../styles/country.css";
 import { Button, Table} from "react-bootstrap";
+import Country from "./Country";
 
 function Countries() {
     const [country, setCountry] = useState([]);
@@ -16,21 +17,13 @@ function Countries() {
 
     return(
         <Fragment>
-            <Table striped bordered hover country>
+            <Table striped bordered hover className="country">
                 <thead>
                     <tr><th>Country</th><th>Capital</th><th>Sub</th></tr>
                 </thead>
                 <tbody>
                 {
-                    country.map(country => 
-                        <tr key={country.cca3}>
-                            <td>{country.translations.rus.official}</td>
-                            <td>{country.capital}</td>
-                            <td>
-                                <Button variant="success"> Add </Button>
-                            </td>
-                        </tr>
-                        )
+                    country.map(country => <Country key={ country.cca3 } name={ country.translations.rus.official } capital={country.capital} />)
                 }
                 </tbody>
             </Table>
