@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import * as React from "react";
 import { Button } from "react-bootstrap";
 import "../styles/select.css";
 
 
 function Country(props){
-    const [selected, setSelected] = useState(false);
+    const [selected, setSelected] = React.useState(false);
 
     const GetSelected = () => {
         setSelected(true);

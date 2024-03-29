@@ -1,6 +1,6 @@
  //import React from "react";
 //import { Component } from "react";
-import React, {Component, Fragment} from "react";
+import * as React from "react";
 import "../styles/App.css";
 import Header from "./Header";
 import Main from "./Main";
@@ -21,10 +21,10 @@ function App() {
     let someButton = "My button";
 
     return (
-        <Fragment>
+        <>
             <Header buttonName={ someButton } />
             <Main />
-        </Fragment>
+        </>
     ); 
 }
 

@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState } from "react";
+import * as React from "react";
 import "../styles/Header.css"
 
 // let someButton = "My button";
@@ -22,7 +22,7 @@ import "../styles/Header.css"
 function Header(props) {
     // let someButton = "My button";
     // let count = 0;
-    const [count, SetNewCount] = useState(0);
+    const [count, SetNewCount] = React.useState(0);
 
     const headerClick = () => {
         SetNewCount(count + 1);
@@ -30,14 +30,14 @@ function Header(props) {
     }
 
     return (
-        <Fragment>
+        <>
             <header>
                 Header JSX in Component
                 <button className="some-button" onClick={headerClick}>
                     { props.buttonName } clicked { count } times
                     </button>
             </header>
-        </Fragment>
+        </>
     );
 }
 

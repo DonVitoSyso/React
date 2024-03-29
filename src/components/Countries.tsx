@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from "react";
+import * as React from "react";
 import axios from "axios";
 import "../styles/country.css";
 import { Button, Table} from "react-bootstrap";
 import Country from "./Country";
 
 function Countries() {
-    const [country, setCountry] = useState([]);
+    const [country, setCountry] = React.useState([]);
 
     if(!country.length) {
         axios.get("https://restcountries.com/v3.1/all").then(res => {
@@ -16,7 +16,7 @@ function Countries() {
     
 
     return(
-        <Fragment>
+        <>
             <Table striped bordered hover className="country">
                 <thead>
                     <tr><th>Country</th><th>Capital</th><th>Sub</th></tr>
@@ -27,7 +27,7 @@ function Countries() {
                 }
                 </tbody>
             </Table>
-        </Fragment>
+        </>
     )
 }
 

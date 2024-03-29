@@ -1,20 +1,24 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CheckerPlugin } = require('awesome-typescript-loader');
 
 module.exports = {
-     entry: "./src/index.js",
+     entry: "./src/index.tsx",
      output: {
         path: path.join(__dirname, "/dist"),
         filename: "bundle.js"
      },
+     resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+     },
      module: {
         rules: [
             {
-                test: /\.js$/, 
-                exclude: /node_modules/,
+                test: /\.(ts|tsx)$/,
                 use: {
-                    loader: "babel-loader"
-                }
+                    loader: 'awesome-typescript-loader'
+                },
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
@@ -25,6 +29,7 @@ module.exports = {
      plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html"
-        })
+        }),
+        new CheckerPlugin()
      ]
 }

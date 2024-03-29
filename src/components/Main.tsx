@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import * as React from "react";
 import "../styles/Main.css"
 import Countries from "./Countries";
 
@@ -16,11 +16,11 @@ import Countries from "./Countries";
 
 function Main() {
     return (
-        <Fragment>
+        <>
             <main>
                 <Countries />
             </main>
-        </Fragment>
+        </>
     )
 }
 
