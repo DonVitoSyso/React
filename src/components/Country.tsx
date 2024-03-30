@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import "../styles/select.css";
 
 
-function Country(props){
+function Country({name, capital}){
     const [selected, setSelected] = React.useState(false);
 
     const GetSelected = () => {
@@ -12,8 +12,8 @@ function Country(props){
 
     return(
         <tr className={selected ? "selected-country" : ""}>
-            <td>{ props.name }</td>
-            <td>{ props.capital }</td>
+            <td>{ name }</td>
+            <td>{ capital }</td>
             <td>
                 {selected ?
                     <Button variant="danger" onClick={() => setSelected(false)}> Remove </Button>

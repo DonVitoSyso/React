@@ -1,6 +1,8 @@
 import * as React from "react";
 import "../styles/Main.css"
 import Countries from "./Countries";
+import Children from "./Children";
+import { Alert } from "react-bootstrap";
 
 // class Main extends Component {
 //     render() {
@@ -15,9 +17,12 @@ import Countries from "./Countries";
 // }
 
 function Main() {
+    let Data = <Alert> Data </Alert>;
+
     return (
         <>
             <main>
+                <Children> { Data } </Children>
                 <Countries />
             </main>
         </>
